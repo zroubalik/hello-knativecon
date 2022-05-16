@@ -1,7 +1,7 @@
 version: 0.0.0
 name: hello-knativecon
 namespace: ""
-runtime: quarkus
+runtime: node
 registry: ""
 image: ""
 imageDigest: ""
@@ -12,18 +12,7 @@ builder: ""
 builders: {}
 buildpacks: []
 volumes: []
-buildEnvs:
-- name: BP_NATIVE_IMAGE
-  value: "false"
-- name: BP_MAVEN_BUILT_ARTIFACT
-  value: target/quarkus-app/lib/ target/quarkus-app/*.jar target/quarkus-app/app/
-    target/quarkus-app/quarkus/
-- name: BP_MAVEN_BUILD_ARGUMENTS
-  value: package -DskipTests=true -Dmaven.javadoc.skip=true -Dquarkus.package.type=fast-jar
-- name: MAVEN_S2I_ARTIFACT_DIRS
-  value: target/quarkus-app
-- name: S2I_SOURCE_DEPLOYMENTS_FILTER
-  value: lib quarkus-run.jar app quarkus
+buildEnvs: []
 envs: []
 annotations: {}
 options: {}
@@ -31,6 +20,6 @@ labels: []
 healthEndpoints:
   liveness: /health/liveness
   readiness: /health/readiness
-created: 2022-05-16T20:56:37.879273+02:00
+created: 2022-05-16T23:43:08.56844+02:00
 invocation:
   format: http
